@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<link rel=\"icon\" href=\"data:,\">
+<h1> Assignment 2 Web Server </h>
+<p>The second assignment is designed to familiarize yourself with the Java networking API. Your task is to develop a web server using Java that is capable of serving static content. This assignment should improve your understanding of TCP, server sockets, and the HTTP protocol.</p>
+
+<p><em>Note</em>: This assignment is performed in groups of 1-2 people. Groups of 3 (or larger) are not allowed.</p>
+
+<h3>Reference material</h3>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP overview</a></li>
+<li><a href="http://docs.oracle.com/javase/tutorial/networking/index.html">Java networking tutorial</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/net/ServerSocket.html">Official Java documentation</a></li>
+</ul>
+
+<h3>Useful downloads</h3>
+
+<ul>
+<li><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY client</a> (for Windows users)</a></li>
+<li>If you use <a href="https://brew.sh">Homebrew (on macOS)</a>, you can <code>brew install telnet</code>.</li>
+</ul>
+
+<h3>Problem 1</h3>
+
+<p>Implement a simple web server that accepts multiple client connections on some predefined port (e.g., 8888) using the <code>ServerSocket</code> class. The server should serve (at least) <code>HTML</code> and <code>PNG</code> files from a local directory, using the <code>GET</code> method in the <code>HTTP</code> protocol. The response from the server should include correct and relevant headers as well as the requested file. The server should run until you terminate it.</p>
+
+<p>Start by implementing a server that accepts connections and returns a predefined (valid) HTTP/HTML response. Once you can connect to the server with a web browser and view the predefined HTML page, you should add support for reading HTML files from disk are returning these. Finally, add support for images (binary files).</p>
+
+<p>If a user requests a specific directory, e.g. <code>/</code> or <code>user1/pages</code> and this directory contains an <code>index.htm</code> or <code>index.html</code> file, then this file should be returned. Note that the ending <code>/</code> is optional, so <code>http://myserver.com/user1</code> and <code>http://myserver.com/user1/</code> should both return the <code>index.html</code> file in the <code>user1</code> directory.</p>
+
+<p>Prepare a few <code>HTML</code> and <code>PNG</code> files in a directory hierarchy and use this to test your web server. Make sure to include both <code>index.html</code> files as well as other named <code>HTML</code> files, e.g., <code>myfile.html</code>. Your report should include screenshots of the browser window when you request a named <code>HTML</code> page, an image, and a directory (with an <code>index.html</code> file).</p>
+
+<p>Your web server should handle possible exceptions. You can assume that the user will only request files and directories that exist.</p>
+
+<p><strong>Note</strong>: You are not allowed to use third-party libraries or existing Java classes (such as <code>com.sun.net.httpserver</code>) since these make the problem trivial.</p>
+
+<p><em>Hint:</em> You can reuse your code from the first assignment.</p>
+
+<h3>Problem 2</h3>
+
+<p>The web server you implemented in Problem 1 only supports the HTTP response <code>200 OK</code>. You should now add support for the following response types: <code>302</code>, <code>403</code>, <code>404</code>, and <code>500</code>. If any of these response codes require additional information, such as the access policy required for <code>403</code>, you are free to make reasonable assumptions and design decisions. Note that these should be documented and motivated in your report.</p>
+
+<p>Include a description of how you tested each of these response codes with screenshots of the result in your report.</p>
+
+<h4>VG-task 1</h4>
+
+<p>Add support for the <code>HTTP POST</code> method. Add a webpage with a form that allows a user to upload <code>PNG</code> images somewhere in your directory hierarchy.</p>
+
+<h4>VG-task 2</h4>
+
+<p>Add support for the <code>HTTP PUT</code> method. You can, for example, test this with the <a href="https://curl.haxx.se"><code>curl</code></a> command. Explain the differences between the <code>PUT</code> and <code>POST</code> methods in your report.</p>
+
+<h3>Problem 3</h3>
+
+<p>Use a <code>telnet</code> client instead of a web browser to connect to your web server. The <code>telnet</code> client provides you with a connection to the server, so you need to emulate a web browser by typing the <code>HTTP</code> commands, e.g., <code>GET</code>.</p>
+
+<p>Include screenshots of the terminal window when you <code>GET</code> a named <code>HTML</code> page, an image, and a directory (with an <code>index.html</code> file). Explain the output for all of these cases.</p>
+
+<h3>Submission</h3>
+
+<p>If you work in a group of 2, make sure your submission is named <code>&lt;username1&gt;_&lt;username2&gt;_assign2.zip</code>, e.g., <code>aa222bb_cc333dd_assign2.zip</code>. Note that everyone in the group should submit a solution to Moodle (before the deadline) and that these solutions should be identical. If you submit solutions that differ, you will fail the assignment and have to redo at a later date. So please agree on the final submission before you submit.</p>
+
+<p>Include a summary of what each of the participants of the group contributed and how you split the workload (in percent). For example, student_name_1: 45%, student_name_2: 55%. If these differ too much, the participants might receive different grades for the assignment. If one of the members in the group does not contribute at an acceptable level, please notify the teacher as soon as possible.</p>
+</div></div><div class="submissionstatustable"><h3>Status för inlämning</h3><div class="box boxaligncenter submissionsummarytable"><table class="generaltable">
+
+</html>
